@@ -40,7 +40,7 @@ namespace EFCachingProvider.Caching
             foreach (var dep in dependentEntitySets)
             {
                 CreateRegionIfNeeded(dep);
-                _cache.Put(key, "", dep);
+                _cache.Put(key, "", absoluteExpiration - DateTime.Now, dep);
             }
 
         }
